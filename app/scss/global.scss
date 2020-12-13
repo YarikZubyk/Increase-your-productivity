@@ -21,6 +21,7 @@ li {
 a.get-started {
     width: 113px;
     min-height: 43px;
+    max-height: 43px;
     background: #D2E1FF;
     border-radius: 2px;
     color: #3A79FF;
@@ -31,6 +32,22 @@ a.get-started {
     font-weight: bold;
     font-size: 13px;
     line-height: 16px;
+}
+
+a.read-more-red{
+    padding: 13px 15px 13px 16px;
+    background: #FFD7D7;
+    border-radius: 2px;
+    color: #D43F3F;
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 16px;
+    text-decoration: unset;
+    display: flex;
+    align-items: center;
+    justify-self: center;
 }
 
 .p-normal,
@@ -123,4 +140,35 @@ a.feature{
     font-size: 13px;
     line-height: 16px;
     text-decoration: unset;
+}
+
+ul.slick-dots {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    margin-left: -72px;
+    bottom: 0;
+
+    li {
+        width: 8px;
+        height: 8px;
+        background: #D6DAE5;
+        border-radius: 50%;
+        margin-left: 4px;
+        margin-right: 4px;
+
+        button {
+            display: none;
+        }
+    }
+
+    li.slick-active {
+        width: 8px;
+        height: 8px;
+        background: #5982E7;
+        border-radius: 50%;
+        margin-left: 4px;
+        margin-right: 4px;
+    }
 }
