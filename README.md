@@ -1,8 +1,11 @@
 # Increase-your-productivity
 
-Run project
-------------------------------------
-You must have Gulp version 4 installed
+Для начала работы
+|Должна быть установлена последняя версия Gulp CLI tools глобально (подробнее - GitHub )
 
-run project command - gulp
+1. git clone <this repo>
+2. node install
+3. npm install
+4. gulp
+
 
