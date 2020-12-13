@@ -1,7 +1,8 @@
 # Increase-your-productivity
 
-You must have Gulp version 4 installed
+Run project
 ------------------------------------
+You must have Gulp version 4 installed
 
-Run project - gulp
+command - gulp
 
