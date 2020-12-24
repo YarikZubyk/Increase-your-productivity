@@ -520,3 +520,77 @@ section.customers {
         }
     }
 }
+
+section.help{
+    .container{
+        padding: 100px;
+    }
+}
+
+.accordion {
+    background-color: #CFD8DC;
+    color: #fff;
+    cursor: pointer;
+    padding: 16px;
+    width: 50%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 18px;
+    transition: 0.5s;
+}
+
+
+.active, .accordion:hover {
+    background-color: #607D8B;
+}
+
+.accordion:after {
+    content: '\002B';
+    color: #fff;
+	font-size: 18px;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.panel {
+    display: none;
+    padding: 0 18px;
+	color: #212121;
+    background-color: #fff;
+    max-height: 100%;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.line-animation {
+    stroke-dashoffset: 137;
+    stroke-dasharray: 137;
+    animation: animdash 3s linear;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes  animdash{
+    to{
+        stroke-dasharray: 200;
+    }
+}
+
+.anim-circle{
+    transform: rotate(400deg);
+    transform-origin: 50% 50%;
+    animation: linec 6s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes linec{
+    to{
+        transform:rotate(695deg);
+    }
+}
