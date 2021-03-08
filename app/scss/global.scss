@@ -1,7 +1,23 @@
-section{
-    width: 1440px;
-    max-width: 100%;
+.container {
+    max-width: 1440px;
     margin: 0 auto;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+
+:focus{
+    outline: unset !important;
+}
+
+input{
+    padding-left: 23px;
+}
+
+input::placeholder{
+    font-family: Quicksand;
+    color: #7A85AD;
+    line-height: 16px;
+    font-weight: bold;
 }
 
 li {
@@ -34,7 +50,7 @@ a.get-started {
     line-height: 16px;
 }
 
-a.read-more-red{
+a.read-more-red {
     padding: 13px 15px 13px 16px;
     background: #FFD7D7;
     border-radius: 2px;
@@ -74,6 +90,18 @@ p.p-light {
     color: #8D96BD;
 }
 
+.p-normal.white {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+}
+
 h2 {
     font-family: Quicksand;
     font-style: normal;
@@ -93,7 +121,7 @@ h3 {
     color: #3D4F9F;
 }
 
-h4{
+h4 {
     color: #3D4F9F;
     font-family: Quicksand;
     font-style: normal;
@@ -102,7 +130,16 @@ h4{
     line-height: 30px;
 }
 
-p.bold{
+h5 {
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    color: #3D4F9F;
+}
+
+p.bold {
     color: #4074F8;
     font-family: Open Sans;
     font-style: normal;
@@ -132,7 +169,7 @@ a.video-play {
     text-decoration: unset;
 }
 
-a.feature{
+a.feature {
     color: #ADB4D2;
     font-family: Quicksand;
     font-style: normal;
@@ -147,7 +184,7 @@ ul.slick-dots {
     align-items: center;
     position: absolute;
     left: 50%;
-    margin-left: -72px;
+    margin-left: -50px;
     bottom: 0;
 
     li {
@@ -170,5 +207,11 @@ ul.slick-dots {
         border-radius: 50%;
         margin-left: 4px;
         margin-right: 4px;
+    }
+}
+
+@media (max-width: 590px) {
+    .container {
+        padding-top: 30px !important;
     }
 }
