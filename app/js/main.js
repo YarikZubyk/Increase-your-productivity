@@ -1,11 +1,6 @@
-$(function () {
-
-
-
-
-});
-
 /*---------------------------*/
+
+//const { active } = require("browser-sync");
 
 $('.below-header-slider').slick({
   dots: true,
@@ -37,20 +32,15 @@ $('.slider-customer').flickity({
 
 /*------------------------------*/
 
-let arr = document.getElementsByClassName("accordion");
-let i;
+$(".accordion").on("click", function (event) {
+  if ($(this).hasClass('active')) {
+    $(this).removeClass('active');
+  } else {
+    $('.accordion').removeClass('active');
+    $(this).addClass('active');
+  }
+});
 
-for (i = 0; i < arr.length; i++) {
-  arr[i].addEventListener("click", function () {
-    this.classList.toggle("active");
-    let panel = this.nextElementSibling;
-    if (panel.style.display === "block") {
-      panel.style.display = "none";
-    } else {
-      panel.style.display = "block";
-    }
-  });
-}
 
 /*--------------------------------*/
 
@@ -60,15 +50,32 @@ let myObjetSecond = document.querySelector(".line-anim")
 
 var offsetToTriggerAnimation = svgLocation.y + svgLocation.height;
 
-function scrollAnimTriggerCheck(evt)
-{
+function scrollAnimTriggerCheck(evt) {
   var viewBottom = window.scrollY + window.innerHeight;
   if (viewBottom > offsetToTriggerAnimation) {
-    myObject.classList.add("anim-circle");;
+    myObject.classList.add("anim-circle");
     myObjetSecond.classList.add("line-animation")
     document.removeEventListener("scroll", scrollAnimTriggerCheck);
   }
 }
 document.addEventListener("scroll", scrollAnimTriggerCheck);
 
+/*---------------------toggle menu----------------------*/
 
+// $(function() {
+//   $("#toggle-menu").on("click", function(e) {
+//     $("#mobile-menu").toggleClass("active");
+//     $(this).toggleClass("active");
+//   });  
+// });
+
+
+var toggleMenu = document.getElementById("toggle-menu");
+var mobileMenu = document.getElementById("mobile-menu");
+
+function enableMenu(evt){
+  toggleMenu.classList.toggle('active')
+  mobileMenu.classList.toggle('active')
+  }
+
+toggleMenu.addEventListener('click', enableMenu);

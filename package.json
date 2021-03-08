@@ -10,8 +10,8 @@
   "license": "ISC",
   "devDependencies": {
     "animate.css": "^4.1.1",
-    "browser-sync": "^2.26.5",
-    "del": "^5.0.0",
+    "browser-sync": "^2.26.14",
+    "del": "^5.1.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.1.0",
     "gulp-concat": "^2.6.1",
@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "aos": "^2.3.4",
-    "flickity": "^2.2.1",
+    "flickity": "^2.2.2",
     "magnific-popup": "^1.1.0",
     "slick-carousel": "^1.8.1",
     "waypoints": "^4.0.1"
