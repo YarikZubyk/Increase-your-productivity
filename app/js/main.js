@@ -1,9 +1,28 @@
 /*---------------------------*/
 
 //const { active } = require("browser-sync");
+var _functions = {},
+    winWidth;
+
+function removeScroll() {
+  popupTop = $(window).scrollTop();
+  $('html').css({
+      "position": "fixed",
+      "top": -$(window).scrollTop(),
+      "width": "100%"
+  });
+}
+
+function addScroll() {
+  $('html').css({
+      "position": "static"
+  });
+  window.scroll(0, popupTop);
+}
 
 $('.below-header-slider').slick({
   dots: true,
+  fade: true,
 });
 
 $('.container-slider').slick({
@@ -62,20 +81,60 @@ document.addEventListener("scroll", scrollAnimTriggerCheck);
 
 /*---------------------toggle menu----------------------*/
 
-// $(function() {
-//   $("#toggle-menu").on("click", function(e) {
-//     $("#mobile-menu").toggleClass("active");
-//     $(this).toggleClass("active");
-//   });  
-// });
-
 
 var toggleMenu = document.getElementById("toggle-menu");
 var mobileMenu = document.getElementById("mobile-menu");
+var bodySite = document.querySelector('body');
+var menuOverlay = document.getElementById('menu-overlay');
 
 function enableMenu(evt){
   toggleMenu.classList.toggle('active')
   mobileMenu.classList.toggle('active')
-  }
+  menuOverlay.classList.toggle('background');
+  bodySite.classList.toggle('scroll');
+}
 
 toggleMenu.addEventListener('click', enableMenu);
+
+/*--------------------POPUP----------------------------*/
+
+_functions.openPopup = function (popup) {
+  $('.popup-container').removeClass('active');
+  $(popup + ', .popup-container').addClass('active');
+  removeScroll();
+};
+
+_functions.closePopup = function () {
+  $('.popup-container').removeClass('active');
+  addScroll();
+};
+
+$(document).on('click', '#open-popup', function (e) {
+  e.preventDefault();
+  _functions.openPopup('.popup-container[data-rel="' + $(this).data('rel') + '"]');
+});
+
+$(document).on('click', '#close-popup', function(e){
+  e.preventDefault();
+  _functions.closePopup();
+})
+
+// var openPopup = document.getElementById("open-popup");
+// var popupOverlay = document.getElementById("popup-overlay")
+
+// function popupOpen(evt){  
+//   popupOverlay.classList.add('active');
+//   removeScroll();
+// }
+// openPopup.addEventListener('click', popupOpen);
+
+// /*--------------close popup----------------*/
+
+// var closePopup = document.getElementById("close-popup");
+// function popupClose(evt){
+//   popupOverlay.classList.remove('active');
+//   addScroll();
+// }
+// closePopup.addEventListener('click', popupClose);
+// document.getElementById("overlay").addEventListener('click', popupClose)
+
