@@ -92,7 +92,7 @@ header#header-site {
         .toggle-menu {
             width: 50px;
             height: 50px;
-            background: black;
+            background: #5e81fe;
             display: none;
 
             span {
@@ -100,7 +100,7 @@ header#header-site {
                 text-align: center;
                 padding: 5px 0px;
                 height: 2px;
-                color: #000;
+                color: #5e81fe;
             }
         }
     }
@@ -108,12 +108,11 @@ header#header-site {
 
 .nav-menu {
     max-width: 100%;
-    width: 100%;
     position: fixed;
-    right: -100%;
+    right: -320px;
     height: 100%;
     transition: 0.5s;
-    z-index: 9;
+    z-index: 3;
 }
 
 body .active {
@@ -160,6 +159,8 @@ body .active {
 
     .container {
         position: relative;
+        padding-left: 0px !important;
+        padding-right: 0px !important;
 
         button.slick-prev.slick-arrow {
             display: none !important;
@@ -177,7 +178,8 @@ body .active {
             min-height: 570px;
             padding-top: 92px;
             background-image: url(../img/clouds.png);
-            background-repeat: no-repeat;
+            animation: slideClouds 30s linear infinite;
+            background-repeat: repeat;
             background-size: cover;
             z-index: 9;
 
@@ -204,8 +206,40 @@ body .active {
         svg {
             position: absolute;
             bottom: 0 !important;
+            width: 100vw;
+            min-height: 450px;
+
+            .line-move {
+                stroke-dasharray: 1567;
+                stroke-dashoffset: 1567;
+                animation: lineMove 5s linear;
+                animation-delay: 0.5s;
+                animation-fill-mode: forwards;
+            }
         }
     }
+}
+
+@keyframes lineMove {
+    to {
+        stroke-dasharray: 1510;
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes slideClouds {
+    0% {
+        background-position-x: 0px;
+    }
+
+    50% {
+        background-position-x: 1375px;
+    }
+
+    100% {
+        background-position-x: 0%;
+    }
+
 }
 
 .list-our-partners {
@@ -926,6 +960,7 @@ section.newsletter {
     .footer-bottom {
 
         padding: 42px 0px 20px 112px;
+
         .copyright {
             span {
                 font-size: 12px;
@@ -937,5 +972,103 @@ section.newsletter {
                 font-style: normal;
             }
         }
+    }
+}
+
+/*-------------------------------------------------*/
+.popup-container.active {
+    transition: 0.5s;
+    opacity: 1;
+    display: block;
+    z-index: 11;
+    top: 0;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+}
+
+.popup-container {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -100;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    -webkit-transition: all 0.1s ease-out;
+    -moz-transition: all 0.1s ease-out;
+    -o-transition: all 0.1s ease-out;
+    transition: all 0.1s ease-out;
+
+    .close-btn:after {
+        position: absolute;
+        top: -45px;
+        right: -45px;
+        content: "\2716";
+        font-size: 50px;
+        font-weight: 700;
+        font-family: 'Courier New', Courier, monospace;
+        color: #FFF;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .popup-content {
+        width: 400px;
+        max-width: 100%;
+        height: 400px;
+        position: fixed;
+        background-color: #6a88f9;
+        left: 50%;
+        margin-left: -200px;
+        top: 50%;
+        margin-top: -200px;
+        z-index: 999;
+        opacity: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 16px;
+
+        form.save-form {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            input.submit {
+                width: 305px;
+                max-width: 100%;
+                height: 59px;
+                background: #4D6CE1;
+                box-shadow: 0px 5px 15px rgba(116, 104, 255, 0.2);
+                border-radius: 5px;
+                color: white;
+                border: unset;
+                font-family: Quicksand;
+                font-size: 13px;
+                margin-top: 20px;
+            }
+
+            input.email {
+                background: #EFEFF7;
+                border-radius: 5px;
+                width: 279px;
+                max-width: 100%;
+                height: 59px;
+                border: unset;
+                margin-top: 20px;
+            }
+        }
+    }
+
+    .popup-overlay {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: #5e81fe;
+        opacity: 0.7;
+        cursor: pointer;
     }
 }
