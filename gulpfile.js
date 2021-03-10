@@ -57,13 +57,13 @@ gulp.task('js', function(){
     .pipe(browserSync.reload({stream: true}))
 });
 
-gulp.task('browser-sync', function() {
-  browserSync.init({
-      server: {
-          baseDir: "app/"
-      }
-  });
-});
+// gulp.task('browser-sync', function() {
+//   browserSync.init({
+//       server: {
+//           baseDir: "app/"
+//       }
+//   });
+// });
 
 gulp.task('export', function(){
   let buildHtml = gulp.src('app/**/*.html')
