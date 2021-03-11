@@ -669,9 +669,10 @@
     </footer>
   </main>
 
-  <div id="popup-overlay" class="popup-container" data-rel="started">
+  <div id="popup-overlay" class="popup_wrapper">
     <div id="overlay" class="popup-overlay"></div>
-      <div class="popup-content">
+    <div class="popup-container">
+      <div class="popup-content" data-rel="started">
         <div id="close-popup" class="close-btn"></div>
         <div class="news-right">
           <form action="" class="save-form">
@@ -680,24 +681,26 @@
             <input type="email" class="email" placeholder="Email address">
             <input type="submit" class="submit" value="Send">
           </form>
+        </div>
+      </div>
+    </div>
+
+    <div id="overlay" class="popup-overlay"></div>
+    <div class="popup-container">
+      <div class="popup-content" data-rel="get-started">
+        <div id="close-popup" class="close-btn"></div>
+        <div class="news-right">
+          <form action="" class="save-form">
+            <input type="name" class="email" placeholder="First Name">
+            <input type="name" class="email" placeholder="Second Name">
+            <input type="email" class="email" placeholder="Email address">
+            <input type="submit" class="submit" value="Send">
+          </form>
+        </div>
       </div>
     </div>
   </div>
 
-  <div id="popup-overlay"  data-rel="get-started">
-    <div id="overlay" class="popup-overlay"></div>
-      <div class="popup-content">
-        <div id="close-popup" class="close-btn"></div>
-        <div class="news-right">
-          <form action="" class="save-form">
-            <input type="name" class="email" placeholder="First Name">
-            <input type="name" class="email" placeholder="Second Name">
-            <input type="email" class="email" placeholder="Email address">
-            <input type="submit" class="submit" value="Send">
-          </form>
-      </div>
-    </div>
-  </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.5/waypoints.min.js"></script>
   <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>

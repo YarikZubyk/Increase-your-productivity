@@ -99,19 +99,19 @@ toggleMenu.addEventListener('click', enableMenu);
 /*--------------------POPUP----------------------------*/
 
 _functions.openPopup = function (popup) {
-  $('.popup-container').removeClass('active');
-  $(popup + ', .popup-container').addClass('active');
+  $('.popup-content').removeClass('active');
+  $(popup + ', .popup_wrapper').addClass('active');
   removeScroll();
 };
 
 _functions.closePopup = function () {
-  $('.popup-container').removeClass('active');
+  $('.popup_wrapper, .popup-content').removeClass('active');
   addScroll();
 };
 
 $(document).on('click', '#open-popup', function (e) {
   e.preventDefault();
-  _functions.openPopup('.popup-container[data-rel="' + $(this).data('rel') + '"]');
+  _functions.openPopup('.popup-content[data-rel="' + $(this).data('rel') + '"]');
 });
 
 $(document).on('click', '#close-popup', function(e){
