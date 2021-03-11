@@ -874,6 +874,7 @@ section.newsletter {
         form.save-form {
             display: flex;
             align-items: center;
+            flex-direction: row;
 
             input.submit {
                 width: 184px;
@@ -976,99 +977,112 @@ section.newsletter {
 }
 
 /*-------------------------------------------------*/
-.popup-container.active {
-    transition: 0.5s;
-    opacity: 1;
-    display: block;
-    z-index: 11;
-    top: 0;
-    -webkit-transition: all 0.5s ease-out;
-    -moz-transition: all 0.5s ease-out;
-    -o-transition: all 0.5s ease-out;
-    transition: all 0.5s ease-out;
+
+form.save-form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    input.submit {
+        width: 305px;
+        max-width: 100%;
+        height: 59px;
+        background: #4D6CE1;
+        box-shadow: 0px 5px 15px rgba(116, 104, 255, 0.2);
+        border-radius: 5px;
+        color: white;
+        border: unset;
+        font-family: Quicksand;
+        font-size: 13px;
+        margin-top: 20px;
+        cursor: pointer;
+        padding-left: 0px !important;
+    }
+
+    input.email {
+        background: #EFEFF7;
+        border-radius: 5px;
+        width: 279px;
+        max-width: 100%;
+        height: 59px;
+        border: unset;
+        margin-top: 20px;
+    }
 }
 
-.popup-container {
+.popup_wrapper .popup-container .popup-content {
     display: none;
+    opacity: 0;
+}
+
+
+.popup_wrapper{
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    top: 100px;
+    position: fixed;
+    left: -100%;
+    z-index: 1000;
+    top: 0;
     width: 100%;
     height: 100%;
-    position: absolute;
-    top: -100;
+}
+
+.popup_wrapper.active {
     left: 0;
-    right: 0;
-    opacity: 0;
-    -webkit-transition: all 0.1s ease-out;
-    -moz-transition: all 0.1s ease-out;
-    -o-transition: all 0.1s ease-out;
-    transition: all 0.1s ease-out;
-
-    .close-btn:after {
-        position: absolute;
-        top: -45px;
-        right: -45px;
-        content: "\2716";
-        font-size: 50px;
-        font-weight: 700;
-        font-family: 'Courier New', Courier, monospace;
-        color: #FFF;
-        text-align: center;
-        cursor: pointer;
-    }
-
-    .popup-content {
-        width: 400px;
-        max-width: 100%;
-        height: 400px;
-        position: fixed;
-        background-color: #6a88f9;
-        left: 50%;
-        margin-left: -200px;
-        top: 50%;
-        margin-top: -200px;
-        z-index: 999;
-        opacity: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 16px;
-
-        form.save-form {
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-
-            input.submit {
-                width: 305px;
-                max-width: 100%;
-                height: 59px;
-                background: #4D6CE1;
-                box-shadow: 0px 5px 15px rgba(116, 104, 255, 0.2);
-                border-radius: 5px;
-                color: white;
-                border: unset;
-                font-family: Quicksand;
-                font-size: 13px;
-                margin-top: 20px;
-            }
-
-            input.email {
-                background: #EFEFF7;
-                border-radius: 5px;
-                width: 279px;
-                max-width: 100%;
-                height: 59px;
-                border: unset;
-                margin-top: 20px;
-            }
-        }
-    }
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
 
     .popup-overlay {
-        position: relative;
+        background: #0000ff26;
+        position: absolute;
         width: 100%;
         height: 100%;
-        background: #5e81fe;
-        opacity: 0.7;
-        cursor: pointer;
+    }
+
+    .popup-container {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        overflow: auto;
+        text-align: center;
+        padding: 15px;
+
+        .popup-content{
+            display: none;
+            opacity: 0;
+        }
+
+        .popup-content.active {
+            max-width: 300px;
+            background: #002dd0ad;
+            padding: 40px;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+            top: 50%;
+            position: relative;
+            margin: 0 auto;
+            display: block;
+            opacity: 1;
+
+            .close-btn:after{
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                content: "\2716";
+                font-size: 25px;
+                font-weight: 700;
+                font-family: 'Courier New', Courier, monospace;
+                color: #FFF;
+                text-align: center;
+                cursor: pointer;
+            }
+        }
     }
 }
